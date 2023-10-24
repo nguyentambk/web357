@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bai tap ve tk giao dien so 1</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style type="text/css">
+		.main{
+			position: relative;
+			margin: 0 auto;
+			text-align: center;
+		}
+		
+		.ft{
+			clear: both;
+			width: 100%;
+			height: 70px;
+			background-color: violet;
+			text-align: center;
+
+		}
+		
+		.banner{
+			width: 100%;
+			height: 150px;
+			float: left;
+			background-color: violet;
+
+			
+		}
+		.slide{
+			width: 100%;
+			height: 250px;
+			float: left;
+			background-color: yellow;
+
+			
+		}
+		
+		.k1{
+			float: left;
+			width: 100%;
+		}
+		.left{
+			width: 20%;
+			height: 700px;
+			background-color: lightblue;
+			float: left;
+		}
+		.content{
+			width: 60%;
+			height: 700px;
+			background-color: lightgreen;
+			float: left;
+		}
+		.right{
+			width: 20%;
+			height: 700px;
+			background-color: lightblue;
+			float: left;
+		}
+		.row{
+			width: 100%;
+			height: 150px;
+			background-color: gray;
+			float: left;
+		}
+		.sp{
+			position: relative;
+			width: 25%;
+			height: 150px;
+			background-color: red;
+			float: left;
+			text-align: center;
+		}
+		.sp_chan{
+			position: relative;
+			width: 25%;
+			height: 150px;
+			background-color: pink;
+			float: left;
+			text-align: center;
+		}
+		.sp_detail{
+			position: absolute;
+			left: 0;
+		}
+		.xemtiep{
+			position: absolute;
+			bottom: 0;
+			right: 0;
+		}
+		/*reponsive mobile*/
+		@media(max-width: 600px){
+			.slide{
+				display: none;
+			}
+			.left{
+				display: none;
+			}
+			.right{
+				display: none;
+			}
+			.content{
+				width: 100%;
+				background-color: blue;
+			}
+			.sp{
+				width: 100%;
+			}
+			
+			.ft{
+				display: none;
+			}
+		}
+		#modal{
+			display: none;
+			width: 500px;
+			height: 500px;
+			z-index: 2;
+			background-color: blue;
+			position: absolute;
+			top:150px;
+			left: 350px;
+		}
+		#quangcao{
+			display: none;
+			width: 600px;
+			height: 600px;
+			z-index: 2;
+			background-color: green;
+			position: fixed;
+			top:150px;
+			left: 350px;
+			animation-name: adv;
+			animation-duration: 0.5s;
+		}
+		@keyframes adv {
+		  from {top:-300px; opacity:0}
+		  to {top:0; opacity:1}
+		}
+
+	</style>
+</head>
+<body>
+	<div class="main">
+		<div class="banner">banner</div>
+		<div class="slide">slides</div>
+		<div class="k1">
+			<div class="left">Left</div>
+			<div class="content">
+				<div class="row">
+					<div class="sp">
+						<div class="sp_detail">Sp 1</div>
+						<button onclick="openmodal()" class="xemtiep">Xem tiep</button>
+					</div>
+					<div class="sp_chan">Sp 2
+					<button onclick="openmodal()" class="xemtiep">Xem tiep</button>
+					</div>
+					<div class="sp">Sp 3
+						<button onclick="openmodal()" class="xemtiep">Xem tiep</button>
+					</div>
+					<div class="sp_chan">Sp 4
+						<button onclick="openmodal()" class="xemtiep">Xem tiep</button>
+					</div>
+				</div>
+				<div class="row">
+					<div class="sp_chan">Sp 5</div>
+					<div class="sp">Sp 6</div>
+					<div class="sp_chan">Sp 7</div>
+					<div class="sp">Sp 8</div>
+				</div>
+			</div>
+			<div class="right">Right</div>
+		</div>
+		<div class="ft">Footer</div>
+		<div id="modal">
+			<span onclick="closemodal()" class="close">&times;</span>
+		</div>
+	</div>
+	<div id="quangcao">
+		<span onclick="closeadv()" class="close">&times;</span>
+	</div>
+	<script type="text/javascript">
+		function openmodal(){
+			//alert('okokok');
+			document.getElementById('modal').style.display='block';
+		}
+		function closemodal(){
+			document.getElementById('modal').style.display='none';
+		}
+		function closeadv(){
+			document.getElementById('quangcao').style.display='none';
+		}
+		function openadv(){
+			document.getElementById('quangcao').style.display='block';
+		}
+		//setTimeout(openadv, 3000);
+		//setInterval(openadv, 5000);
+	</script>
+</body>
+</html>
